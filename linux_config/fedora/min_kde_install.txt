@@ -1,0 +1,22 @@
+## Install server-edition (full server)
+
+# Update system
+# Installs for base kde-minimal
+base_desktop    ->  plasma-desktop  konsole  dolphin
+display-manager ->  sddm  sddm-breeze  sddm-kcm
+networking      ->  bluedevil  plasma-nm
+accessories     ->  kde-gtk-config  kdeplasma-addons
+
+# Activate sddm & desktop
+sudo systemctl enable sddm
+sudo systemctl set-default graphical.target
+
+# Apps to install
+accessories    ->  ark  kamera  kwrite  kde-print-manager  spectacle  qalculate
+graphics       ->  gwenview  gimp
+internet       ->  firefox  thunderbird
+office         ->  libreoffice  okular
+programming    ->  vim  nano  code
+multimedia     ->  vlc  dragon  elisa-player
+administrarion ->  dnfdragora  btop  timeshift
+

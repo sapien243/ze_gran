@@ -1,0 +1,9 @@
+# This allows git to ignore the contents of this folder
+
+
+*
+!.gitignore
+!target/
+
+
+#

@@ -1,0 +1,143 @@
+#### For help as man-pages/html-pages
+git help <command>
+
+
+##   Configure git globally on a system
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --global init.defaultBranch "main"
+
+##   Check git configuration
+git config --list
+
+##   Initialize repository as current directory
+git init
+##   Check repository status
+git status
+
+
+##   Add files/folders to (staging)
+git add <file>
+##   Remove files/folders from (staging)
+git restore --staged <file>
+
+##   Save experimental changes (working)
+git stash -u
+git stash save "stash_name"
+## list stash names & indexes [0..]
+git stash list
+##   Revert experimental changes (working)
+git stash pop
+git stash apply 0
+
+##   Restore files/folders to last commit
+git restore <file>
+##   Rename files/folders in repository
+git mv <old_name> <new_name>
+
+##   Remove files/folders from repository cache
+git rm --cached <file>
+##   Remove files/folders from repository
+git rm <file>
+
+
+##   Compare file (working || staged)
+git diff <file>
+##   Compare file (staged || last_commit)
+git diff --staged <file>
+
+##   Compare file (branch_1-name || branch_2-name) -> last_commits
+git diff {branch_1} {branch_2} <file>
+##   Compare file (commit_1-hash || commit_2-hash)
+git diff [hash_1] [hash_2] <file>
+
+
+##   Commit staged changes
+git commit -m "commit_message"
+##   Edit last commit message entry
+git commit --amend -m "commit_message"
+
+##   Commit working changes
+git commit -a -m "commit_message"
+##   Restore files/folders to a previous commit
+git reset [hash]
+
+
+##   Shows whole commit history
+git log
+##   Shows each commit in a single line
+git log --oneline
+
+##   Limit commit history to '0' entries
+git log -n '0'
+##   Show the commits & their full diff
+git log -p
+
+
+##   View current and other branches
+git branch
+##   Create new branch
+git branch {new_branch}
+##   Rename branch
+git branch -M {new_name}
+
+##   Create & switch to new_branch
+git switch -c {new_branch}
+git checkout -b {new_branch} {source_branch}
+##   Switch in-between branches
+git switch {branch}
+
+
+##   Switch to the receiving branch
+git checkout {branch}
+##   Merge branch to current branch
+git merge {branch} -m "commit_message"
+
+
+##   Delete branch
+git branch -d {branch}
+##   Delete remote branch
+git push (origin) :{branch}
+
+
+####  Squash flag keeps master branch clean
+##   Switch to the receiving branch
+git checkout {branch}
+##   Merge branch to current branch
+git merge {branch} --squash
+##   Commit changes
+git commit -m "commit_message"
+
+#*** merge master branch to feature branch ***#
+#***  this helps to keep code up to date   ***#
+
+
+##   Publish local repository to remote repository
+git remote add (origin) :link_to_repo:
+git push -u (origin) {branch}
+
+##   Clone remote repository to local system in current dir
+git clone :link_to_repo:
+
+
+####  Sync local to remote repo using fetch  ####
+##   Bring remote changes to working tree
+git fetch (origin)/{branch}
+##   Switch to the receiving branch
+git checkout {branch}
+##   Merge changes to local branch
+git merge (origin)/{branch} -m "commit_message"
+
+
+####  Sync remote to local repo using fetch  ####
+##   Switch to the source branch
+git checkout {branch}
+##   Bring remote changes to working tree
+git fetch (origin)/{branch}
+##   Clean commits
+git rebase -i (origin)/{branch}
+##   Push changes to remote branch
+git push (origin) {branch}
+
+
+#

@@ -1,0 +1,5 @@
+## openh264 configuration after installation
+## edit about:config making the following True
+media.gmp-gmpopenh264.enabled
+media.gmp-gmpopenh264.provider.enabled
+
