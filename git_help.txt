@@ -123,10 +123,11 @@ git clone :link_to_repo:
 ####  Sync local to remote repo using fetch  ####
 ##   Bring remote changes to working tree
 git fetch (origin) {branch}
+git pull
 ##   Switch to the receiving branch
 git checkout {branch}
 ##   Merge changes to local branch
-git merge (origin)/{branch} -m "commit_message"
+git merge (origin) {branch} -m "commit_message"
 
 
 ####  Sync remote to local repo using fetch  ####
@@ -134,8 +135,9 @@ git merge (origin)/{branch} -m "commit_message"
 git checkout {branch}
 ##   Bring remote changes to working tree
 git fetch (origin) {branch}
+git pull
 ##   Clean commits
-git rebase -i (origin)/{branch}
+git rebase -i (origin) {branch}
 ##   Push changes to remote branch
 git push (origin) {branch}
 
