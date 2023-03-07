@@ -6,12 +6,16 @@ git help <command>
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 git config --global init.defaultBranch "main"
+##   To avoid windows error -> warning: lf will be replaced by crlf
+git config --global core.autocrlf false
 
 ##   Check git configuration
 git config --list
 
 ##   Initialize repository as current directory
 git init
+##   Track large files (eg. databases) or edit .gitattributes
+git lfs track "*.db"
 ##   Check repository status
 git status
 

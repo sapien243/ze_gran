@@ -1,0 +1,44 @@
+# ++++++++++++++++++++++++++++++++++++++++
+
+##   Pacman commands
+#  Update database & upgrade system and packages
+pacman -Syu
+#  Query packages
+pacman -Ss package-name
+
+#  Install packages
+pacman -S package-name
+#  Remove package
+pacman -Rns package-name
+
+#  List installed packages
+pacman -Q
+#  Check cache size
+du -sh /var/cache/pacman/pkg/
+
+#  Clear cache with 3 pkgs remaining
+paccache -r
+# Clear cache with 1 pkgs remaining
+paccache -rk 1
+
+# ++++++++++++++++++++++++++++++++++++++++
+
+##   Edited files in msys2
+C:\msys64\mingw64\include\c++\12.2.0\cmath
+    |45:    #include_next <math.h>    ->  #include <math.h>
+
+C:\msys64\mingw64\include\c++\12.2.0\bits\std_abs.h
+    |38:    #include_next <stdlib.h>  ->  #include <stdlib.h>
+
+C:\msys64\mingw64\include\c++\12.2.0\cstdlib
+    |75:    #include_next <stdlib.h>  ->  #include <stdlib.h>
+
+# ++++++++++++++++++++++++++++++++++++++++
+
+##   Settings for git to work with vs-code
+add git-wrap.bat to git location
+add the following to vs-code settings
+"git.enabled": true,
+"git.path": "C:/<path to git-wrap.bat>",
+
+# ++++++++++++++++++++++++++++++++++++++++

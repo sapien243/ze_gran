@@ -1,0 +1,51 @@
+##   Source: https://github.com/ScoopInstaller/Install#readme
+# ++++++++++++++++++++++++++++++++
+
+##   Set powershell execution policy
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+#  To install scoop to "C:\Users\<YOUR USERNAME>\scoop"
+irm get.scoop.sh | iex
+
+# ================================
+
+##   To install scoop with custom settings
+#  Download the installer
+irm get.scoop.sh -outfile 'install.ps1'
+
+#  To see all configurable parameters
+.\install.ps1 -?
+
+#  To install scoop to a custom directory
+.\install.ps1 -ScoopDir 'D:\<path>' -ScoopGlobalDir 'D:\<path>' -NoProxy
+#  To install scoop as an admin
+.\install.ps1 -RunAsAdmin [-OtherParameters ...]
+
+# +++++++++++++++++++++++++++++++++
+
+##   Commands
+
+#  List all scoop commands
+scoop help
+#  List all apps installed by scoop
+scoop list
+
+#  Check scoop & app status
+scoop status
+#  Update scoop and apps
+scoop update <app>
+
+#  Install/uninstall apps
+scoop install/uninstall <app>
+#  Stop/enable app updates
+scoop hold/unhold <app>
+
+#  Remove previous versions of an app
+scoop cleanup <app>
+#  Clear scoop cache
+scoop cache rm --all
+
+#  Delete scoop and all its apps
+scoop uninstall scoop
+
+# +++++++++++++++++++++++++++++++++
