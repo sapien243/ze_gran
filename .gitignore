@@ -9,6 +9,7 @@
 Cargo.lock
 
 ## python excludes
+.ipynb_checkpoints
 
 ## visual studio code excludes
 .vscode/
@@ -16,7 +17,7 @@ Cargo.lock
 
 # target/  -> holds c/c++/rust binaries
 # .extras/ -> holds other small minor projects
-# extras/  -> holds binary input and output files
+# extras/  -> holds input and output files
 
 
 #
