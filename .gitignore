@@ -10,9 +10,10 @@ Cargo.lock
 
 ## python excludes
 .ipynb_checkpoints
+__pycache__
 
 ## visual studio code excludes
-.vscode/
+.vscode
 
 
 # target/  -> holds c/c++/rust binaries
