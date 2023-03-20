@@ -1,9 +1,8 @@
 from graphics import *
-import math
 
 
 class Car(object):
-	def __init__(self):
+	def __init__(self, xd=45, yd=120):
 		self.car_body = CarBody()
 		self.wheel1 = Wheel()
 		self.wheel2 = self.wheel1.clone(320, 0)
@@ -22,6 +21,7 @@ class Car(object):
 
 class CarBody(object):
 	def __init__(self, xd=45, yd=120):
+		# Car body
 		front_wheel = [Point(xd+150, yd+0),  Point(xd+145, yd+5), Point(xd+135, yd+45),
 					   Point(xd+130, yd+50), Point(xd+60, yd+50), Point(xd+55, yd+45),
 					   Point(xd+45, yd+5),   Point(xd+40, yd+0)]
@@ -37,10 +37,12 @@ class CarBody(object):
 		body = front_wheel+front+top+back+back_wheel
 		self.body = Polygon(body)
 		self.body.setFill("dark slate gray")
+		# Glass/windows on car
 		glass = [Point(xd+174, yd+84), Point(xd+229, yd+127), Point(xd+320, yd+126),
 				 Point(xd+372, yd+108), Point(xd+380, yd+88)]
 		self.glass = Polygon(glass)
 		self.glass.setFill("dark cyan")
+		# Underside of the car
 		self.under = Rectangle(Point(xd+35, yd), Point(xd+475, yd+65))
 		self.under.setFill("gray10")
 
@@ -49,23 +51,32 @@ class CarBody(object):
 		self.glass.draw(window)
 
 class Wheel(object):
-	def __init__(self, x=140, y=141):
-		center = Point(x, y)
+	def __init__(self, xd=45, yd=120):
+		center = Point(xd+95, yd+21)
+		# Draw tire
 		self.tire = Circle(center, 40)
 		self.tire.setFill("black")
+		# Draw rim
 		self.rim = Circle(center, 35)
 		self.rim.setFill("gray47")
+		# Draw hub
 		self.hub = Circle(center, 10)
 		self.hub.setFill("gray59")
+
+	def move(self, dx=0, dy=0):
+		self.tire.move(dx, dy)
+		self.rim.move(dx, dy)
+		self.hub.move(dx, dy)
+
+	def clone(self, dx=0, dy=0):
+		clone = Wheel()
+		clone.move(dx, dy)
+		return clone
 
 	def draw(self, window):
 		self.tire.draw(window)
 		self.rim.draw(window)
 		self.hub.draw(window)
-
-	def clone(self, dx=0, dy=0):
-		clone = Wheel(self.hub.getCenter().getX()+dx, self.hub.getCenter().getY()+dy)
-		return clone
 
 
 def main() -> None:
