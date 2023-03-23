@@ -6,20 +6,20 @@ import time
 class DigitalClock(object):
 	def __init__(self, anchor):
 		self.text = Text(anchor, "hello")
-		self.text.setSize(24)
+		self.text.setSize(20)
 		self.text.setFace("courier")
 		self.text.setStyle("bold")
 		# self.hour = 0, self.minute = 0, self.second = 0
 		self.hands = Hands()
-		self.edge1 = Circle(Point(150, 200), 78)
-		self.edge2 = Circle(Point(150, 200), 80)
+		self.edge1 = Circle(Point(150, 230), 78)
+		self.edge2 = Circle(Point(150, 230), 80)
 
 	def draw(self, window):
 		self.text.draw(window)
 		self.hands.draw(window)
 		self.edge1.draw(window)
 		self.edge2.draw(window)
-		time.sleep(1)
+		time.sleep(2)
 		while True:
 			sys_time = int(time.time())
 			hour = (sys_time//3600+3)%24
@@ -28,14 +28,14 @@ class DigitalClock(object):
 			# mnth = (secs//2629743)%12+1, ears = secs//31556926+1970
 			self.text.setText(f"{hour:0>2d}:{minute:0>2d}:{second:0>2d}")
 			self.hands.update(window, hour, minute, second)
-			time.sleep(0.999999)
+			time.sleep(0.99)
 
 
 class Hands(object):
-	def __init__(self, center=0):
-		self.secs = [Point(150, 200), Point(150, 270)]
-		self.mins = [Point(150, 200), Point(150, 260)]
-		self.hour = [Point(150, 200), Point(150, 250)]
+	def __init__(self, xd=150, yd=230):
+		self.secs = [Point(xd, yd), Point(xd, yd+70)]
+		self.mins = [Point(xd, yd), Point(xd, yd+60)]
+		self.hour = [Point(xd, yd), Point(xd, yd+50)]
 
 	def update(self, window, hr, mn, sc):
 		self.undraw()
@@ -65,13 +65,11 @@ class Hands(object):
 
 
 def main() -> None:
-	window = GraphWin("clock", 300, 300)
-	window.setCoords(0, 0, 300, 300)
+	window = GraphWin("clock", 300, 350)
+	window.setCoords(0, 0, 300, 350)
 
-	anchor = Point(150, 75)
+	anchor = Point(150, 90)
 	time = DigitalClock(anchor)
-
-	window.getMouse()
 	time.draw(window)
 
 	window.getMouse()
