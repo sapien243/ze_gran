@@ -140,7 +140,8 @@ def minimax(board):
 
 
 def minmax(board, guy):
-    best,ties,loss = [], [], []
+    best, ties, loss = [], [], []
+    best_len, ties_len, loss_len = 0, 0, 0
 
     for mov in actions(board):
         test = result(board, mov)
@@ -153,11 +154,13 @@ def minmax(board, guy):
 
         if (guy == 1 and score > 0) or (guy != 1 and score < 0):
             best.append([mov, score])
+            best_len+=1
         elif score == 0:
             ties.append([mov, score])
+            ties_len+=1
         else:
             loss.append([mov, score])
-    best_len, ties_len, loss_len = len(best), len(ties), len(loss)
+            loss_len+=1
 
     if best_len > 0:
         return best[randint(0, best_len-1)]
