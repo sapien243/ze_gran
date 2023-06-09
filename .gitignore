@@ -15,10 +15,12 @@ __pycache__
 ## visual studio code excludes
 .vscode
 
+## target  -> holds c/c++/rust binaries
+target
 
-# target/  -> holds c/c++/rust binaries
-# .extras/ -> holds other small minor projects
-# extras/  -> holds input and output files
+## extras  -> holds input and output files
+extras
 
+## .extras -> holds other small minor projects
 
 #
