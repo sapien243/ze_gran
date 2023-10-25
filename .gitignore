@@ -1,26 +1,26 @@
 #### ze_gran repository .gitignore ####
 
-
 ## c/c++ excludes
+bin/
 
 ## cmake/make/ninja excludes
 
 ## rust excludes
 Cargo.lock
+target/
 
 ## python excludes
 .ipynb_checkpoints
-__pycache__
+__pycache__/
+
+## zig excludes
+zig-cache/
+zig-out/
+
+## lisp excludes
+.bak
 
 ## visual studio code excludes
-.vscode
-
-## target  -> holds c/c++/rust binaries
-target
-
-## extras  -> holds input and output files
-extras
-
-## .extras -> holds other small minor projects
+.vscode/
 
 #
