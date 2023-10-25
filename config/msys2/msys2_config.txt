@@ -35,10 +35,3 @@ C:\msys64\mingw64\include\c++\12.2.0\cstdlib
 
 # ++++++++++++++++++++++++++++++++++++++++
 
-##   Settings for git to work with vs-code
-add git-wrap.bat to git location
-add the following to vs-code settings
-"git.enabled": true,
-"git.path": "C:/<path to git-wrap.bat>",
-
-# ++++++++++++++++++++++++++++++++++++++++
