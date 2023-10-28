@@ -1,0 +1,9 @@
+# Location:
+C:\Users\ian\AppData\LocalLow\Team Cherry
+
+# Essentials:
+Hollow Knight\*
+
+# Note
+no original save dir exists,
+copy the files in save directly to 'Hollow Knight\'
