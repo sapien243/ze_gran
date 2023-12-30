@@ -1,0 +1,29 @@
+[ Extensions ]
+    c/c++
+    cmake
+    cmake tools
+    even better toml
+    github codespace
+    gitlens
+    html css support
+    jupyter
+    pylance
+    python
+    rust-analyzer
+    zig language
+    live server
+
+{ vscode-extensions }
+    vscode-extensions.ms-vscode.cpptools
+    vscode-extensions.twxs.cmake
+    vscode-extensions.ms-vscode.cmake-tools
+    vscode-extensions.tamasfe.even-better-toml
+    vscode-extensions.github.codespaces
+    vscode-extensions.eamodio.gitlens
+    *(not)vscode-langservers-extracted
+    vscode-extensions.ms-toolsai.jupyter
+    vscode-extensions.ms-python.vscode-pylance
+    vscode-extensions.ms-python.python
+    vscode-extensions.rust-lang.rust-analyzer
+    *(unstable)vscode-extensions.ziglang.vscode-zig
+    vscode-extensions.ms-vscode.live-server
