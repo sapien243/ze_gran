@@ -3,7 +3,7 @@ git help <command>
 
 
 ##   Configure git globally on a system
-git config --global user.name "Your Name"
+git config --global user.name "Any Name"
 git config --global user.email "your@email.com"
 git config --global init.defaultBranch "main"
 ##   To avoid windows error -> warning: lf will be replaced by crlf

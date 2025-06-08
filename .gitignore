@@ -17,7 +17,7 @@ __pycache__/
 zig-cache/
 zig-out/
 
-## lisp excludes
+## racket excludes
 *.bak
 
 ## visual studio code excludes
